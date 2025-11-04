@@ -1,0 +1,30 @@
+# ===== MINIMAL FRAUDHIVE REQUIREMENTS =====
+# Core essentials only
+
+# Web Framework
+Flask==3.0.0
+
+# Machine Learning
+scikit-learn==1.3.2
+xgboost==2.0.3
+numpy==1.26.2
+pandas==2.1.4
+joblib==1.3.2
+
+# API Calls (CAMARA Network APIs)
+requests==2.31.0
+
+# LLM Integration (Google Gemini)
+google-generativeai==0.3.2
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Date/Time
+python-dateutil==2.8.2
+
+# Production Server
+gunicorn==21.2.0
+
+# CORS (if frontend is separate domain)
+Flask-CORS==4.0.0
