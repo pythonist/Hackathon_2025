@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/icons/favicon_icon.png') }}">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <title>Advanced Analytics - FraudHive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            z-index: 999;
+            padding: 0.75rem 1.5rem;
+            background: rgba(74, 158, 255, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: rgba(43, 125, 224, 0.95);
+            transform: translateX(-5px);
+            box-shadow: 0 6px 16px rgba(74, 158, 255, 0.5);
+        }
+
+        /* Analytics Grid */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .analytics-grid-horizontal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .analytics-grid-horizontal {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .analytics-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .analytics-card.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Info Tooltip */
+        .info-tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            margin-left: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 320px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            text-align: left;
+            border-radius: 8px;
+            padding: 1rem;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -160px;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: var(--primary-color) transparent transparent transparent;
+        }
+
+        .info-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .export-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .export-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+/* Heatmap */
+        .heatmap-container {
+            display: grid;
+            grid-template-columns: repeat(24, 1fr);
+            gap: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(74, 158, 255, 0.5);
+        }
+
+        .heatmap-legend {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        /* Map Styles */
+        #fraudMap {
+            height: 500px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(74, 158, 255, 0.1));
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--success-color);
+        }
+        
+        .roi-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .roi-metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+        
+        .roi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .roi-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Velocity Checks */
+        .velocity-container {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .velocity-alert {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger-color);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .velocity-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Timeline Styles */
+        .behavior-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 1rem;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .behavior-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+        
+        .timeline-event {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -2.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 3px solid var(--bg-card);
+        }
+        
+        .marker-sim-swap { background: var(--danger-color); }
+        .marker-location-change { background: var(--warning-color); }
+        .marker-roaming { background: var(--primary-color); }
+        .marker-device-offline { background: #6b7280; }
+        .marker-high-risk-transaction { background: var(--danger-color); }
+        
+        .event-content {
+            background: var(--bg-dark);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-type {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-time {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .event-details {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .severity-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .severity-HIGH { background: var(--danger-color); color: white; }
+        .severity-CRITICAL { background: #991b1b; color: white; }
+        .severity-MEDIUM { background: var(--warning-color); color: white; }
+        
+        /* Loading States */
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(74, 158, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+        .heatmap-cell .hour-label {
+            font-size: 0.85rem;      /* Larger than before */
+            font-weight: 800;         /* Bolder */
+            line-height: 1;           /* Tight spacing */
+            margin-bottom: 2px;
+        }
+
+        .heatmap-cell .fraud-rate {
+            font-size: 0.7rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.history.back()">
+        <i class="bi bi-arrow-left"></i> Back
+    </button>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/monitoring-health-svgrepo-com.svg') }}" alt="FraudGuard" class="icon-primary">
+                </span>
+                <span class="logo-text">FraudHive</span>
+                <span class="logo-subtext">Powered by Nokia NaC</span>
+                <!-- <span class="logo-badge">Powered by Nokia NaC</span> -->
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="bi bi-shield-check"></i> Analyze Transaction
+                </a>
+                <a href="/logs" class="nav-link">
+                    <i class="bi bi-list-ul"></i> Transaction History
+                </a>
+                <a href="/dashboard" class="nav-link">
+                    <i class="bi bi-graph-up"></i> Dashboard
+                </a>
+                <a href="/analytics" class="nav-link active">
+                    <i class="bi bi-graph-up-arrow"></i>Analytics
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="analytics-container" style="max-width: 1800px; margin: 0 auto; padding: 2rem;">
+        <div class="page-header">
+            <h1>
+                <i class="bi bi-bar-chart-line"></i> Advanced Fraud Analytics
+                <span class="info-tooltip">
+                    <i class="bi bi-info-circle"></i>
+                    <span class="tooltip-text">
+                        <strong>About This Dashboard</strong><br><br>
+                        This analytics dashboard provides deep insights into fraud patterns, geographic hotspots, and network behavior. 
+                        Data is analyzed in real-time using machine learning models and Nokia CAMARA Network APIs to identify suspicious activities.
+                        <br><br>
+                        <strong>Key Features:</strong><br>
+                        • 24-hour fraud activity heatmap<br>
+                        • Geographic risk clustering<br>
+                        • Velocity anomaly detection<br>
+                        • Network behavior timeline
+                    </span>
+                </span>
+            </h1>
+            <p>Deep insights into fraud patterns, geographic hotspots, and network behavior</p>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="analytics-card full-width roi-calculator">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="bi bi-currency-dollar"></i> Fraud Prevention ROI Dashboard
+                </div>
+            </div>
+            <div class="roi-metrics">
+                <div class="roi-metric">
+                    <div class="roi-value">${{ roi_data.total_saved }}</div>
+                    <div class="roi-label">Total Fraud Prevented</div>
+                </div>
+                <div class="roi-metric">
+                    <div class="roi-value">{{ roi_data.fraud_blocked }}</div>
+                    <div class="roi-label">Transactions Blocked</div>
+                </div>
+                <div class="roi-metric">
+                    <div class="roi-value">{{ roi_data.accuracy }}%</div>
+                    <div class="roi-label">Detection Accuracy</div>
+                </div>
+                <div class="roi-metric">
+                    <div class="roi-value">${{ roi_data.avg_fraud_amount }}</div>
+                    <div class="roi-label">Avg Fraud Amount</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-grid">
+            <!-- Fraud Heatmap -->
+            <div class="analytics-card full-width">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="bi bi-grid-3x3"></i> Fraud Activity Heatmap (24-Hour)
+                    </div>
+                    <button class="export-btn" onclick="exportHeatmap()">
+                        <i class="bi bi-download"></i> Export
+                    </button>
+                </div>
+                <div id="heatmapContainer">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                <div class="heatmap-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #10b981;"></div>
+                        <span>Low Risk (0-20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #f59e0b;"></div>
+                        <span>Medium Risk (21-50%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ef4444;"></div>
+                        <span>High Risk (50%+)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic Fraud Map -->
+            <div class="analytics-card full-width">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="bi bi-geo-alt"></i> Geographic Fraud Clusters
+                    </div>
+                    <button class="export-btn" onclick="exportMap()">
+                        <i class="bi bi-download"></i> Export
+                    </button>
+                </div>
+                <div id="fraudMap"></div>
+            </div>
+        </div>
+
+        <!-- Horizontal layout for velocity and network events -->
+        <div class="analytics-grid-horizontal">
+            <!-- Velocity Checks -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="bi bi-speedometer2"></i> Velocity Anomalies
+                    </div>
+                </div>
+                <div class="velocity-container" id="velocityChecks">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Behavior Timeline -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="bi bi-clock-history"></i> Network Behavior Events
+                    </div>
+                </div>
+                <div class="behavior-timeline" id="behaviorTimeline">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Analytics JS with Fixed Heatmap Colors
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeatmap();
+            loadFraudMap();
+            loadVelocityChecks();
+            loadBehaviorTimeline();
+        });
+
+        // FIXED: Heatmap with Dynamic Text Colors
+        function loadHeatmap() {
+            fetch('/api/fraud-heatmap')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('heatmapContainer');
+                    
+                    const heatmapHTML = `
+                        <div class="heatmap-container">
+                            ${Array.from({length: 24}, (_, hour) => {
+                                const hourData = data.hourly_fraud[hour] || {total: 0, high_risk: 0, fraud_rate: 0};
+                                const fraudRate = hourData.fraud_rate || 0;
+                                const color = getHeatColor(fraudRate);
+                                
+                                // Determine text color based on background brightness
+                                const textClass = fraudRate > 35 ? 'dark-bg' : 'light-bg';
+                                const hourLabel = hour.toString().padStart(2, '0');
+                                return `
+                                    <div class="heatmap-cell ${textClass}" 
+                                        style="background: ${color};" 
+                                        title="Hour ${hourLabel}:00\nTotal: ${hourData.total} transactions\nHigh Risk: ${hourData.high_risk}\nFraud Rate: ${fraudRate}%"
+                                        onclick="showHourDetails(${hour}, ${JSON.stringify(hourData).replace(/"/g, '&quot;')})">
+                                        <strong>${hourLabel}:00</strong>
+                                        <small style="font-size: 0.65rem; font-weight: 600;">${fraudRate.toFixed(0)}%</small>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                    
+                    container.innerHTML = heatmapHTML;
+                })
+                .catch(error => {
+                    console.error('Error loading heatmap:', error);
+                    document.getElementById('heatmapContainer').innerHTML = 
+                        '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">Error loading heatmap data</p>';
+                });
+        }
+
+        function getHeatColor(fraudRate) {
+            if (fraudRate === 0) return '#1a1f29';
+            if (fraudRate <= 20) return '#10b981';
+            if (fraudRate <= 50) return '#f59e0b';
+            return '#ef4444';
+        }
+
+        function showHourDetails(hour, hourData) {
+            const modal = `
+                <div id="hourModalOverlay" 
+                    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                            background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(6px);
+                            display: flex; align-items: center; justify-content: center;
+                            z-index: 9999; animation: fadeIn 0.3s ease;">
+                    
+                    <div id="hourModalBox"
+                        style="background: var(--bg-card); width: 90%; max-width: 700px; 
+                                border-radius: 16px; border: 2px solid var(--primary-color);
+                                box-shadow: 0 12px 40px rgba(0,0,0,0.5); padding: 2rem;
+                                transform: scale(0.8); opacity: 0; 
+                                animation: popIn 0.35s ease forwards;">
+                        
+                        <h3 style="margin-top: 0; color: var(--primary-color); text-align: center;">
+                            <i class="bi bi-clock"></i> Hour ${hour}:00 - ${hour + 1}:00 Analysis
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                            <div style="background: var(--bg-dark); padding: 1rem; border-radius: 10px;">
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Total Transactions</div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">${hourData.total}</div>
+                            </div>
+                            <div style="background: rgba(239,68,68,0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--danger-color);">
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">High Risk</div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--danger-color);">${hourData.high_risk}</div>
+                            </div>
+                            <div style="background: var(--bg-dark); padding: 1rem; border-radius: 10px;">
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Fraud Rate</div>
+                                <div style="font-size: 2rem; font-weight: bold; color: ${hourData.fraud_rate > 50 ? 'var(--danger-color)' : 'var(--warning-color)'};">
+                                    ${hourData.fraud_rate.toFixed(1)}%
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="closeHourModal()" 
+                            style="margin-top: 2rem; width: 100%; padding: 0.9rem;
+                                background: var(--primary-color); color: white;
+                                border: none; border-radius: 10px; cursor: pointer;
+                                font-weight: 600; font-size: 1rem; letter-spacing: 0.3px;
+                                transition: all 0.3s;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+                <style>
+                    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+                    @keyframes popIn { 
+                        0% { transform: scale(0.8); opacity: 0; } 
+                        100% { transform: scale(1); opacity: 1; } 
+                    }
+                    @keyframes popOut { 
+                        0% { transform: scale(1); opacity: 1; } 
+                        100% { transform: scale(0.8); opacity: 0; } 
+                    }
+                </style>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modal);
+        }
+
+        function closeHourModal() {
+            const overlay = document.getElementById('hourModalOverlay');
+            const box = document.getElementById('hourModalBox');
+            if (box) {
+                box.style.animation = 'popOut 0.25s ease forwards';
+                setTimeout(() => overlay.remove(), 250);
+            }
+        }
+
+
+
+        // Load other components (keeping existing code)
+        function loadFraudMap() {
+            fetch('/api/fraud-geographic')
+                .then(response => response.json())
+                .then(data => {
+                    const map = L.map('fraudMap').setView([20, 0], 2);
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors',
+                        maxZoom: 18
+                    }).addTo(map);
+                    
+                    data.clusters.forEach(cluster => {
+                        const color = cluster.risk_level === 'High' ? '#ef4444' : 
+                                     cluster.risk_level === 'Medium' ? '#f59e0b' : '#10b981';
+                        
+                        const circle = L.circleMarker([cluster.lat, cluster.lon], {
+                            radius: Math.min(Math.max(cluster.count * 3, 8), 40),
+                            fillColor: color,
+                            color: color,
+                            weight: 2,
+                            opacity: 0.8,
+                            fillOpacity: 0.6
+                        }).addTo(map);
+                        
+                        circle.bindPopup(`
+                            <div style="font-family: Arial; padding: 0.5rem;">
+                                <strong style="font-size: 1.1rem;">${cluster.location}</strong><br>
+                                <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #e5e7eb;">
+                                    <strong>Transactions:</strong> ${cluster.count}<br>
+                                    <strong>Risk Level:</strong> <span style="color: ${color}; font-weight: bold;">${cluster.risk_level}</span><br>
+                                    <strong>Fraud Rate:</strong> ${cluster.risk_rate}%<br>
+                                    <strong>Total Amount:</strong> $${cluster.total_amount.toFixed(2)}
+                                </div>
+                            </div>
+                        `);
+                    });
+                    
+                    if (data.clusters.length > 0) {
+                        const bounds = L.latLngBounds(data.clusters.map(c => [c.lat, c.lon]));
+                        map.fitBounds(bounds, {padding: [50, 50]});
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading fraud map:', error);
+                    document.getElementById('fraudMap').innerHTML = 
+                        '<p style="padding: 2rem; text-align: center; color: var(--text-secondary);">Error loading map</p>';
+                });
+        }
+
+        function loadVelocityChecks() {
+            fetch('/api/velocity-checks')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('velocityChecks');
+                    
+                    if (data.anomalies.length === 0) {
+                        container.innerHTML = `
+                            <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                                <i class="bi bi-check-circle" style="font-size: 3rem; color: var(--success-color);"></i>
+                                <p style="margin-top: 1rem;">No velocity anomalies detected</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    const anomaliesHTML = data.anomalies.map(anomaly => `
+                        <div class="velocity-alert">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong style="color: var(--danger-color);">
+                                    <i class="bi bi-exclamation-triangle"></i> ${anomaly.severity} Severity
+                                </strong>
+                                <span class="severity-badge severity-${anomaly.severity}">${anomaly.severity}</span>
+                            </div>
+                            <div class="velocity-item">
+                                <span>Phone:</span>
+                                <strong>${anomaly.phone}</strong>
+                            </div>
+                            <div class="velocity-item">
+                                <span>Rapid Transactions:</span>
+                                <strong>${anomaly.transaction_count} in ${anomaly.time_window}</strong>
+                            </div>
+                            <div class="velocity-item">
+                                <span>Total Amount:</span>
+                                <strong>$${anomaly.total_amount.toFixed(2)}</strong>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    container.innerHTML = anomaliesHTML;
+                });
+        }
+
+        function loadBehaviorTimeline() {
+            fetch('/api/network-behavior')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('behaviorTimeline');
+                    
+                    if (data.events.length === 0) {
+                        container.innerHTML = '<div style="text-align: center; padding: 2rem;">No events detected</div>';
+                        return;
+                    }
+                    
+                    const eventsHTML = data.events.map(event => {
+                        const markerClass = `marker-${event.type.toLowerCase().replace(/ /g, '-')}`;
+                        return `
+                            <div class="timeline-event">
+                                <div class="timeline-marker ${markerClass}"></div>
+                                <div class="event-content">
+                                    <div class="event-header">
+                                        <div class="event-type">
+                                            ${event.type}
+                                            <span class="severity-badge severity-${event.severity}">${event.severity}</span>
+                                        </div>
+                                        <div class="event-time">${event.timestamp}</div>
+                                    </div>
+                                    <div class="event-details">${event.details}</div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    container.innerHTML = eventsHTML;
+                });
+        }
+
+        function exportHeatmap() {
+            alert('Export feature: Coming soon');
+        }
+
+        function exportMap() {
+            alert('Export feature: Coming soon');
+        }
+    </script>

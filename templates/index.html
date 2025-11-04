@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <title>FraudHive - Advanced Transaction Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/icons/favicon_icon.png') }}">
+
+    <style>
+        /* ======================================= */
+        /* MODAL STYLES (REFINED & CLEANED)      */
+        /* ======================================= */
+        
+        .results-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            padding: 2rem;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .results-modal-overlay.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .results-modal-container {
+            width: 100%;
+            max-width: 1400px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin: 2rem auto;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-modal-header {
+            padding: 2rem 2.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* --- MODIFIED: Removed colorful gradient --- */
+            background: var(--bg-card); 
+            border-radius: 20px 20px 0 0;
+        }
+
+        .results-modal-header h2 {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .modal-close-btn {
+            background: var(--danger-color-alpha);
+            border: 2px solid var(--danger-color);
+            color: var(--danger-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--danger-color);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .results-modal-body {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 2rem;
+            padding: 2rem 2.5rem;
+            min-height: 600px;
+        }
+
+        /* ===== LEFT PANEL: RISK SCORE ===== */
+        .risk-score-panel {
+            background: var(--bg-dark); /* Simplified background */
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        /* --- MODIFIED: Replaced conic-gradient with clean border --- */
+        .risk-circle-enhanced {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto;
+            background: var(--bg-card); /* Inner color */
+            border: 10px solid var(--border-color); /* Default border */
+        }
+
+        .risk-circle-enhanced.high-risk {
+            border-color: var(--danger-color);
+        }
+        .risk-circle-enhanced.medium-risk {
+            border-color: var(--warning-color);
+        }
+        .risk-circle-enhanced.low-risk {
+            border-color: var(--success-color);
+        }
+
+        /* --- REMOVED: .risk-circle-enhanced::before --- */
+
+        .risk-score-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .risk-percentage-large {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- MODIFIED: Removed gradient text, replaced with solid color --- */
+        .risk-circle-enhanced.high-risk .risk-percentage-large {
+            color: var(--danger-color);
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+
+        .risk-circle-enhanced.medium-risk .risk-percentage-large {
+            color: var(--warning-color);
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+
+        .risk-circle-enhanced.low-risk .risk-percentage-large {
+            color: var(--success-color);
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+
+        .risk-label-large {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .risk-ml-score {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .risk-badge-enhanced {
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* --- MODIFIED: Replaced gradients with flat alpha backgrounds --- */
+        .risk-badge-enhanced.high-risk {
+            background: var(--danger-color-alpha);
+            border: 2px solid var(--danger-color);
+            color: var(--danger-color);
+        }
+
+        .risk-badge-enhanced.medium-risk {
+            background: var(--warning-color-alpha);
+            border: 2px solid var(--warning-color);
+            color: var(--warning-color);
+        }
+
+        .risk-badge-enhanced.low-risk {
+            background: var(--success-color-alpha);
+            border: 2px solid var(--success-color);
+            color: var(--success-color);
+        }
+
+        .transaction-details-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .detail-compact {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border-radius: 8px;
+        }
+
+        .detail-compact i {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .detail-compact-info {
+            flex: 1;
+        }
+
+        .detail-compact-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-compact-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .feedback-compact {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .feedback-compact h5 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feedback-buttons-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feedback-btn-compact {
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-btn-compact.correct {
+            background: var(--success-color-alpha);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+
+        .feedback-btn-compact.correct:hover {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .feedback-btn-compact.false-positive {
+            background: var(--danger-color-alpha);
+            color: var(--danger-color);
+            border: 1px solid var(--danger-color);
+        }
+
+        .feedback-btn-compact.false-positive:hover {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        /* ===== RIGHT PANEL: SCROLLABLE CONTENT ===== */
+        .analysis-content-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            overflow-y: auto;
+            max-height: 80vh;
+            padding-right: 1rem;
+        }
+
+        .analysis-content-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .analysis-content-panel::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+            border-radius: 4px;
+        }
+
+        .analysis-content-panel::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .analysis-card {
+            background: var(--bg-dark);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .analysis-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .analysis-card-header h4 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+        }
+
+        .analysis-card-header i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Network Intelligence Grid - Compact 2x2 */
+        .network-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .network-item-compact {
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .network-item-compact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .network-item-compact.alert {
+            border-color: var(--danger-color);
+            background: var(--danger-color-alpha);
+        }
+
+        .network-item-compact.safe {
+            border-color: var(--success-color);
+            background: var(--success-color-alpha);
+        }
+
+        .network-item-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .network-item-header i {
+            font-size: 1.5rem;
+        }
+
+        .network-item-compact.alert i {
+            color: var(--danger-color);
+        }
+
+        .network-item-compact.safe i {
+            color: var(--success-color);
+        }
+
+        .network-item-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .api-status-mini {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .api-status-mini.real {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .api-status-mini.mock {
+            background: #6b7280;
+            color: white;
+        }
+
+        .network-item-value {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .network-status-badge {
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .network-status-badge.danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .network-status-badge.success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .network-status-badge.warning {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .network-detail-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* --- MODIFIED: AI Explanation Styling --- */
+        .ai-explanation-card {
+            background: var(--bg-dark); /* No gradient */
+            border: 1px solid var(--primary-color); /* Use primary color border */
+        }
+
+        .llm-provider-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color); /* Use primary color */
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .llm-subsection {
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color); /* Use primary color */
+        }
+
+        .llm-subsection h5 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .llm-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .llm-risk-factors {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .llm-risk-factor {
+            padding: 0.75rem;
+            background: var(--bg-card);
+            border-radius: 6px;
+            border-left: 3px solid var(--danger-color);
+        }
+
+        .llm-risk-factor.severity-CRITICAL {
+            border-left-color: #dc2626;
+            background: var(--danger-color-alpha);
+        }
+
+        .llm-risk-factor.severity-HIGH {
+            border-left-color: var(--danger-color);
+            background: var(--danger-color-alpha);
+        }
+
+        .llm-risk-factor.severity-MEDIUM {
+            border-left-color: var(--warning-color);
+            background: var(--warning-color-alpha);
+        }
+
+        .severity-badge {
+            padding: 0.25rem 0.5rem;
+            background: var(--danger-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Rules Section */
+        .rules-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .rule-item-compact {
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .rule-item-compact.severity-critical {
+            border-left-color: #dc2626;
+        }
+
+        .rule-item-compact.severity-high {
+            border-left-color: var(--danger-color);
+        }
+
+        .rule-item-compact.severity-medium {
+            border-left-color: var(--warning-color);
+        }
+
+        .rule-header-compact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .rule-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .rule-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .rule-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .rule-tag.severity {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .rule-tag.impact {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .rule-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* Recommendation Banner */
+        .recommendation-banner {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .recommendation-banner.reject {
+            background: var(--danger-color-alpha);
+            border-color: var(--danger-color);
+        }
+
+        .recommendation-banner.review {
+            background: var(--warning-color-alpha);
+            border-color: var(--warning-color);
+        }
+
+        .recommendation-banner.approve {
+            background: var(--success-color-alpha);
+            border-color: var(--success-color);
+        }
+
+        .recommendation-icon {
+            font-size: 2.5rem;
+        }
+
+        .recommendation-banner.reject .recommendation-icon {
+            color: var(--danger-color);
+        }
+
+        .recommendation-banner.review .recommendation-icon {
+            color: var(--warning-color);
+        }
+
+        .recommendation-banner.approve .recommendation-icon {
+            color: var(--success-color);
+        }
+
+        .recommendation-content h5 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .recommendation-content p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--secondary-color-alpha);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .loading-subtext {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Enhanced Form with Merchant/Payee */
+        .form-section-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-section-divider::before,
+        .form-section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .results-modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-score-panel {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .results-modal-overlay {
+                padding: 1rem;
+            }
+
+            .network-grid-compact {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-circle-enhanced {
+                width: 200px;
+                height: 200px;
+            }
+
+            .risk-percentage-large {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Analyzing Transaction...</div>
+            <div class="loading-subtext">Checking ML model, network intelligence & fraud rules</div>
+        </div>
+    </div>
+
+    <div class="results-modal-overlay" id="resultsModal">
+        <div class="results-modal-container">
+            <div class="results-modal-header">
+                <h2>
+                    <i class="bi bi-shield-check"></i>
+                    Transaction Analysis Results
+                </h2>
+                <button class="modal-close-btn" onclick="closeResultsModal()">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+
+            <div class="results-modal-body" id="modalBodyContent">
+                </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/monitoring-health-svgrepo-com.svg') }}" alt="FraudGuard" class="icon-primary">
+                </span>
+                <span class="logo-text">FraudHive</span>
+                <span class="logo-subtext">Powered by Nokia NaC</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="bi bi-shield-check"></i> Analyze Transaction
+                </a>
+                <a href="/logs" class="nav-link">
+                    <i class="bi bi-list-ul"></i> Transaction History
+                </a>
+                <a href="/dashboard" class="nav-link">
+                    <i class="bi bi-graph-up"></i> Dashboard
+                </a>
+                <a href="/analytics" class="nav-link">
+                    <i class="bi bi-graph-up-arrow"></i> Analytics
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <img src="{{ url_for('static', filename='assets/icons/monitoring-health-svgrepo-com.svg') }}" 
+                 alt="FraudGuard" 
+                 class="hero-icon">
+            <span class="typing-text" id="typingText"></span>
+            <span class="typing-cursor"></span>
+        </h1>
+
+        <p class="hero-description">
+            Advanced AI-powered fraud detection system leveraging machine learning models 
+            and Nokia CAMARA Network-as-Code APIs to identify suspicious transactions in real-time.
+        </p>
+
+        <div class="hero-features">
+            <div class="hero-feature">
+                <i class="bi bi-shield-check"></i>
+                <span>Real-time Detection</span>
+            </div>
+            <div class="hero-feature">
+                <i class="bi bi-cpu"></i>
+                <span>ML-Powered</span>
+            </div>
+            <div class="hero-feature">
+                <i class="bi bi-broadcast"></i>
+                <span>Network Intel</span>
+            </div>
+            <div class="hero-feature">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>99.2% Accuracy</span>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <div class="dashboard">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/lightning-usage-svgrepo-com.svg') }}" alt="Transactions" class="icon-primary">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="totalTransactions">{{ stats.total_transactions }}</div>
+                    <div class="stat-label">Total Transactions Analyzed</div>
+                </div>
+            </div>
+            
+            <div class="stat-card high-risk-card">
+                <div class="stat-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/warning-svgrepo-com.svg') }}" alt="High Risk" class="icon-danger">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="highRiskCount">{{ stats.high_risk_count }}</div>
+                    <div class="stat-label">High Risk Detected</div>
+                </div>
+            </div>
+            <div class="stat-card medium-risk-card">
+                <div class="stat-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/warning-svgrepo-com.svg') }}" alt="Medium Risk" class="icon-warning">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="mediumRiskCount">{{ stats.medium_risk_count }}</div>
+                    <div class="stat-label">Medium Risk Detected</div>
+                </div>
+            </div>
+            <div class="stat-card low-risk-card">
+                <div class="stat-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/warning-svgrepo-com.svg') }}" alt="Low Risk" class="icon-success">
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="lowRiskCount">{{ stats.low_risk_count }}</div>
+                    <div class="stat-label">Low Risk Detected</div>
+                </div>
+            </div>
+            <div class="stat-card camara-card">
+                <div class="stat-icon">
+                    <i class="bi bi-sim-fill"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="simSwapCount">{{ stats.sim_swap_detections }}</div>
+                    <div class="stat-label">SIM Swaps Detected</div>
+                </div>
+            </div>
+            
+            <div class="stat-card camara-card">
+                <div class="stat-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="locationMismatch">{{ stats.location_mismatches }}</div>
+                    <div class="stat-label">Location Mismatches</div>
+                </div>
+            </div>
+
+            <div class="stat-card camara-card">
+                <div class="stat-icon">
+                    <i class="bi bi-globe2"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="roamingCount">{{ stats.roaming_detections }}</div>
+                    <div class="stat-label">Roaming Detected</div>
+                </div>
+            </div>
+            
+            <div class="stat-card camara-card">
+                <div class="stat-icon">
+                    <i class="bi bi-phone-vibrate"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="deviceNotConnected">{{ stats.device_not_connected }}</div>
+                    <div class="stat-label">Devices Offline</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="prediction-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="bi bi-shield-shaded"></i>
+                        Transaction Risk Analysis
+                    </h2>
+                    <p class="section-description">
+                        Enter transaction details below. Our AI engine will analyze the transaction using multiple 
+                        data points including ML predictions, network intelligence (SIM swap, location), behavioral 
+                        patterns, and rule-based fraud indicators to provide a comprehensive risk assessment.
+                    </p>
+                </div>
+
+                <div class="camara-status-banner" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));">
+                    <div class="camara-status-item">
+                        <i class="bi bi-circle-fill status-active"></i>
+                        <span>Network APIs Ready</span>
+                    </div>
+                    <div class="camara-status-item">
+                        <i class="bi bi-sim"></i>
+                        <span>SIM Swap Detection: Ready</span>
+                    </div>
+                    <div class="camara-status-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Location Verification: Ready</span>
+                    </div>
+                </div>
+
+                <form method="POST" action="/predict" id="predictionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone_number">
+                                <span class="label-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </span>
+                                Phone Number
+                                <span class="label-helper">(Used for SIM swap & location checks)</span>
+                            </label>
+                            <input type="text" id="phone_number" name="phone_number" 
+                                   placeholder="e.g., +1234567890" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction_amount">
+                                <span class="label-icon">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </span>
+                                Transaction Amount (USD)
+                                <span class="label-helper">(Used for velocity & pattern analysis)</span>
+                            </label>
+                            <input type="number" id="transaction_amount" name="transaction_amount" 
+                                   step="0.01" min="0.01" placeholder="e.g., 1500.00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section-divider">
+                        <span>Payment Details (UPI Simulation)</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="merchant_name">
+                                <span class="label-icon">
+                                    <i class="bi bi-shop"></i>
+                                </span>
+                                Merchant/Payee Name
+                                <span class="label-helper">(e.g., Amazon, Flipkart, or UPI ID)</span>
+                            </label>
+                            <input type="text" id="merchant_name" name="merchant_name" 
+                                   placeholder="e.g., merchant@paytm or Amazon Pay">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment_method">
+                                <span class="label-icon">
+                                    <i class="bi bi-credit-card"></i>
+                                </span>
+                                Payment Method
+                                <span class="label-helper">(Simulates UPI/Card payment)</span>
+                            </label>
+                            <select id="payment_method" name="payment_method">
+                                <option value="UPI">UPI</option>
+                                <option value="Card">Debit/Credit Card</option>
+                                <option value="NetBanking">Net Banking</option>
+                                <option value="Wallet">Digital Wallet</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-predict" id="predictBtn">
+                        <span class="btn-text">
+                            <i class="bi bi-search"></i> Analyze Transaction with Network Intelligence
+                        </span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span> Analyzing...
+                        </span>
+                    </button>
+                </form>
+
+                {% if error %}
+                <div class="alert alert-error" id="errorAlert">
+                    <div class="alert-icon"><i class="bi bi-exclamation-triangle"></i></div>
+                    <div class="alert-content">
+                        <strong>Error</strong>
+                        <p>{{ error }}</p>
+                    </div>
+                    <button class="alert-close" onclick="closeAlert('errorAlert')">&times;</button>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="recent-logs-section">
+                <div class="section-header">
+                    <h3><i class="bi bi-clock-history"></i> Recent Transactions</h3>
+                    <a href="/logs" class="view-all-link">View All History →</a>
+                </div>
+                <div id="recentLogs" class="logs-container">
+                    <div class="loading-placeholder">
+                        <div class="spinner-large"></div>
+                        <p>Loading recent transactions...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-info-section">
+        <div class="product-info-container">
+            <h2><i class="bi bi-info-circle"></i> How FraudHive Works</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon"><i class="bi bi-cpu-fill"></i></div>
+                    <h3>1. ML Analysis</h3>
+                    <p>Advanced XGBoost model trained on millions of transactions analyzes patterns, 
+                    customer behavior, and transaction characteristics to generate base risk score.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="bi bi-broadcast"></i></div>
+                    <h3>2. Network Intelligence</h3>
+                    <p>Nokia CAMARA APIs provide real-time network data including SIM swap detection 
+                    and device location verification to catch sophisticated fraud attempts.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="bi bi-gear-fill"></i></div>
+                    <h3>3. Rule Engine</h3>
+                    <p>Business rules adjust scores based on network anomalies, velocity checks, 
+                    geographic restrictions, and other fraud indicators for final risk determination.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="bi bi-shield-check"></i></div>
+                    <h3>4. Action & Monitoring</h3>
+                    <p>Provides clear recommendations (block/review/approve) and logs all transactions 
+                    for compliance, audit trails, and continuous model improvement.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission with loading overlay
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            document.getElementById('loadingOverlay').classList.add('active');
+        });
+
+        // Close modal function
+        function closeResultsModal() {
+            document.getElementById('resultsModal').classList.remove('active');
+        }
+
+        // Close alert function
+        function closeAlert(alertId) {
+            document.getElementById(alertId).style.display = 'none';
+        }
+
+        // Feedback functions
+        function submitFeedback(phone, feedbackType) {
+            fetch('/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    phone_number: phone,
+                    feedback: feedbackType
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const msgDiv = document.getElementById('feedbackMessage');
+                if (msgDiv) {
+                    msgDiv.innerHTML = `<div style="padding: 1rem; background: var(--success-color-alpha); border: 1px solid var(--success-color); border-radius: 8px; color: var(--success-color); margin-top: 1rem;">
+                        <i class="bi bi-check-circle"></i> Thank you for your feedback!
+                    </div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Show modal with results if result exists
+        {% if result %}
+        window.addEventListener('DOMContentLoaded', function() {
+            // Hide loading overlay
+            document.getElementById('loadingOverlay').classList.remove('active');
+            
+            // Populate modal with results
+            const modalBody = document.getElementById('modalBodyContent');
+            const riskLevel = '{{ result.risk_level|lower|replace(" ", "-") }}';
+            const finalScore = {{ result.probability * 100 }};
+            const mlScore = {{ result.base_probability * 100 }};
+            
+            // Build modal content
+            let modalHTML = `
+                <div class="risk-score-panel">
+                    <div class="risk-circle-enhanced ${riskLevel}" style="--risk-percentage: ${finalScore}">
+                        <div class="risk-score-content">
+                            <div class="risk-percentage-large">${finalScore.toFixed(1)}%</div>
+                            <div class="risk-label-large">Final Risk Score</div>
+                            <div class="risk-ml-score">ML: ${mlScore.toFixed(1)}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-badge-enhanced ${riskLevel}">
+                        {% if result.risk_level == "High Risk" %}
+                        <i class="bi bi-exclamation-octagon"></i>
+                        {% elif result.risk_level == "Medium Risk" %}
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {% else %}
+                        <i class="bi bi-check-circle"></i>
+                        {% endif %}
+                        {{ result.risk_level }}
+                    </div>
+                    
+                    <div class="transaction-details-compact">
+                        <div class="detail-compact">
+                            <i class="bi bi-telephone"></i>
+                            <div class="detail-compact-info">
+                                <div class="detail-compact-label">Phone Number</div>
+                                <div class="detail-compact-value">{{ result.phone_number }}</div>
+                            </div>
+                        </div>
+                        <div class="detail-compact">
+                            <i class="bi bi-currency-dollar"></i>
+                            <div class="detail-compact-info">
+                                <div class="detail-compact-label">Amount</div>
+                                <div class="detail-compact-value">\${{ "%.2f"|format(result.amount) }}</div>
+                            </div>
+                        </div>
+                        <div class="detail-compact">
+                            <i class="bi bi-shop"></i>
+                            <div class="detail-compact-info">
+                                <div class="detail-compact-label">Merchant/Payee</div>
+                                <div class="detail-compact-value">{{ result.merchant_name if result.merchant_name else 'Not Specified' }}</div>
+                            </div>
+                        </div>
+                        <div class="detail-compact">
+                            <i class="bi bi-credit-card"></i>
+                            <div class="detail-compact-info">
+                                <div class="detail-compact-label">Payment Method</div>
+                                <div class="detail-compact-value">{{ result.payment_method if result.payment_method else 'Not Specified' }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-compact">
+                        <h5><i class="bi bi-chat-dots"></i> Was this accurate?</h5>
+                        <div class="feedback-buttons-compact">
+                            <button class="feedback-btn-compact correct" onclick="submitFeedback('{{ result.phone_number }}', 'correct')">
+                                <i class="bi bi-check-circle"></i> Correct
+                            </button>
+                            <button class="feedback-btn-compact false-positive" onclick="submitFeedback('{{ result.phone_number }}', 'false_positive')">
+                                <i class="bi bi-x-circle"></i> False Positive
+                            </button>
+                        </div>
+                        <div id="feedbackMessage"></div>
+                    </div>
+                </div>
+                
+                <div class="analysis-content-panel">
+                    <div class="analysis-card">
+                        <div class="analysis-card-header">
+                            <i class="bi bi-broadcast"></i>
+                            <h4>Network Intelligence Results</h4>
+                            {% if result.api_mode == 'REAL' %}
+                            <span class="llm-provider-badge" style="background: #10b981;">✅ REAL NOKIA API</span>
+                            {% else %}
+                            <span class="llm-provider-badge" style="background: #f59e0b;">⚠️ MIXED MODE</span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="network-grid-compact">
+                            <div class="network-item-compact {% if result.camara_data.sim_swap.swapped %}alert{% else %}safe{% endif %}">
+                                <div class="network-item-header">
+                                    <i class="bi bi-sim"></i>
+                                    <div class="network-item-title">SIM Swap</div>
+                                    <span class="api-status-mini {% if result.api_statuses.sim_swap == 'real_api' %}real{% else %}mock{% endif %}">
+                                        {{ result.api_statuses.sim_swap|upper }}
+                                    </span>
+                                </div>
+                                <div class="network-item-value">
+                                    {% if result.camara_data.sim_swap.swapped %}
+                                    <span class="network-status-badge danger">⚠️ DETECTED</span>
+                                    <div class="network-detail-text">{{ result.camara_data.sim_swap.message }}</div>
+                                    {% else %}
+                                    <span class="network-status-badge success">✅ CLEAR</span>
+                                    <div class="network-detail-text">No recent swap</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="network-item-compact {% if not result.camara_data.location.verified %}alert{% else %}safe{% endif %}">
+                                <div class="network-item-header">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div class="network-item-title">Location</div>
+                                    <span class="api-status-mini {% if result.api_statuses.location == 'real_api' %}real{% else %}mock{% endif %}">
+                                        {{ result.api_statuses.location|upper }}
+                                    </span>
+                                </div>
+                                <div class="network-item-value">
+                                    {% if result.camara_data.location.verified %}
+                                    <span class="network-status-badge success">✅ VERIFIED</span>
+                                    <div class="network-detail-text">Within range</div>
+                                    {% else %}
+                                    <span class="network-status-badge danger">⚠️ MISMATCH</span>
+                                    <div class="network-detail-text">{{ (result.camara_data.location.distance_meters / 1000)|round(1) }} km away</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="network-item-compact {% if result.camara_data.roaming.roaming %}alert{% else %}safe{% endif %}">
+                                <div class="network-item-header">
+                                    <i class="bi bi-globe"></i>
+                                    <div class="network-item-title">Roaming</div>
+                                    <span class="api-status-mini {% if result.api_statuses.roaming == 'real_api' %}real{% else %}mock{% endif %}">
+                                        {{ result.api_statuses.roaming|upper }}
+                                    </span>
+                                </div>
+                                <div class="network-item-value">
+                                    {% if result.camara_data.roaming.roaming %}
+                                    <span class="network-status-badge danger">⚠️ ROAMING</span>
+                                    <div class="network-detail-text">{{ result.camara_data.roaming.roaming_country }}</div>
+                                    {% else %}
+                                    <span class="network-status-badge success">✅ HOME</span>
+                                    <div class="network-detail-text">{{ result.camara_data.roaming.current_network }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="network-item-compact {% if result.camara_data.device_status.connection_status == 'NOT_CONNECTED' %}alert{% else %}safe{% endif %}">
+                                <div class="network-item-header">
+                                    {% if result.camara_data.device_status.connection_status == 'DATA' %}
+                                    <i class="bi bi-wifi"></i>
+                                    {% elif result.camara_data.device_status.connection_status == 'SMS' %}
+                                    <i class="bi bi-chat-dots"></i>
+                                    {% else %}
+                                    <i class="bi bi-phone-x"></i>
+                                    {% endif %}
+                                    <div class="network-item-title">Device</div>
+                                    <span class="api-status-mini {% if result.api_statuses.device_status == 'real_api' %}real{% else %}mock{% endif %}">
+                                        {{ result.api_statuses.device_status|upper }}
+                                    </span>
+                                </div>
+                                <div class="network-item-value">
+                                    {% if result.camara_data.device_status.connection_status == 'DATA' %}
+                                    <span class="network-status-badge success">🟢 CONNECTED</span>
+                                    <div class="network-detail-text">{{ result.camara_data.device_status.network_type }}</div>
+                                    {% elif result.camara_data.device_status.connection_status == 'SMS' %}
+                                    <span class="network-status-badge warning">🟡 SMS ONLY</span>
+                                    <div class="network-detail-text">Limited</div>
+                                    {% else %}
+                                    <span class="network-status-badge danger">🔴 OFFLINE</span>
+                                    <div class="network-detail-text">{{ result.camara_data.device_status.last_seen }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if result.llm_explanation %}
+                    <div class="analysis-card ai-explanation-card">
+                        <div class="analysis-card-header">
+                            <i class="bi bi-brain"></i>
+                            <h4>AI-Powered Fraud Analysis</h4>
+                            <span class="llm-provider-badge">{{ result.llm_explanation.generation_method|upper }}</span>
+                        </div>
+                        
+                        {% if result.llm_explanation.executive_summary %}
+                        <div class="llm-subsection">
+                            <h5><i class="bi bi-file-text"></i> Executive Summary</h5>
+                            <p class="llm-content">{{ result.llm_explanation.executive_summary }}</p>
+                        </div>
+                        {% endif %}
+                        
+                        {% if result.llm_explanation.detailed_analysis %}
+                        <div class="llm-subsection">
+                            <h5><i class="bi bi-clipboard-data"></i> Detailed Analysis</h5>
+                            <div class="llm-content">{{ result.llm_explanation.detailed_analysis|safe }}</div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if result.llm_explanation.risk_factors and result.llm_explanation.risk_factors|length > 0 %}
+                        <div class="llm-subsection">
+                            <h5><i class="bi bi-exclamation-triangle-fill"></i> Risk Factors ({{ result.llm_explanation.risk_factors|length }})</h5>
+                            <div class="llm-risk-factors">
+                                {% for factor in result.llm_explanation.risk_factors %}
+                                <div class="llm-risk-factor severity-{{ factor.severity }}">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <strong>{{ factor.factor }}</strong>
+                                        <span class="severity-badge">{{ factor.severity }}</span>
+                                    </div>
+                                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">{{ factor.explanation }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if result.llm_explanation.recommendation %}
+                        <div class="llm-subsection">
+                            <h5><i class="bi bi-lightbulb-fill"></i> Recommendation</h5>
+                            <div class="recommendation-banner {{ result.llm_explanation.recommendation.action|lower|replace(' ', '-')|replace('_', '-') }}">
+                                <div class="recommendation-icon">
+                                    {% if 'reject' in result.llm_explanation.recommendation.action|lower %}
+                                    <i class="bi bi-x-octagon"></i>
+                                    {% elif 'review' in result.llm_explanation.recommendation.action|lower or 'step' in result.llm_explanation.recommendation.action|lower %}
+                                    <i class="bi bi-shield-exclamation"></i>
+                                    {% else %}
+                                    <i class="bi bi-check-circle"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="recommendation-content">
+                                    <h5>{{ result.llm_explanation.recommendation.action }}</h5>
+                                    {% if result.llm_explanation.recommendation.next_steps %}
+                                    <p>Next steps: {{ result.llm_explanation.recommendation.next_steps|join(', ') }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
+                    {% if result.triggered_rules %}
+                    <div class="analysis-card">
+                        <div class="analysis-card-header">
+                            <i class="bi bi-list-check"></i>
+                            <h4>Triggered Risk Rules ({{ result.triggered_rules|length }})</h4>
+                        </div>
+                        <div class="rules-grid">
+                            {% for rule in result.triggered_rules %}
+                            <div class="rule-item-compact severity-{{ rule.severity|lower }}">
+                                <div class="rule-header-compact">
+                                    <span class="rule-name">{{ rule.rule }}</span>
+                                    <div class="rule-tags">
+                                        <span class="rule-tag severity">{{ rule.severity }}</span>
+                                        <span class="rule-tag impact">{{ rule.impact }}</span>
+                                    </div>
+                                </div>
+                                <div class="rule-description">{{ rule.description }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            `;
+            
+            modalBody.innerHTML = modalHTML;
+            
+            // Show modal
+            document.getElementById('resultsModal').classList.add('active');
+        });
+        {% endif %}
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='typing-animation.js') }}"></script>
+</body>
+</html>

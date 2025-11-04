@@ -1,0 +1,6302 @@
+[
+  {
+    "phone_number": "+65-91883764919",
+    "transaction_amount": 132.43,
+    "timestamp": "2025-11-02 06:15:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 367,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6439776961",
+    "transaction_amount": 164.51,
+    "timestamp": "2025-11-02 02:49:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "France",
+      "city": "Marseille",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1675,
+        "current_country": "France",
+        "current_city": "Marseille"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555651107788",
+    "transaction_amount": 163.37,
+    "timestamp": "2025-11-02 06:14:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 408,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6855839667",
+    "transaction_amount": 48.66,
+    "timestamp": "2025-11-02 22:32:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "France",
+      "city": "Paris",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 417,
+        "current_country": "France",
+        "current_city": "Paris"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98555035527",
+    "transaction_amount": 111.49,
+    "timestamp": "2025-11-02 07:37:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "India",
+      "city": "Kolkata",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1014,
+        "current_country": "India",
+        "current_city": "Kolkata"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30429422641",
+    "transaction_amount": 274.79,
+    "timestamp": "2025-11-02 09:23:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 283,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416684161375",
+    "transaction_amount": 410.07,
+    "timestamp": "2025-11-02 15:35:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1153,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30588728881",
+    "transaction_amount": 191.82,
+    "timestamp": "2025-11-02 12:19:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Hamburg",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 620,
+        "current_country": "Germany",
+        "current_city": "Hamburg"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6297677692",
+    "transaction_amount": 89.56,
+    "timestamp": "2025-11-02 08:16:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Valencia",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1751,
+        "current_country": "Spain",
+        "current_city": "Valencia"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20740056205",
+    "transaction_amount": 50.4,
+    "timestamp": "2025-11-02 03:15:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Birmingham",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1320,
+        "current_country": "United Kingdom",
+        "current_city": "Birmingham"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555777245899",
+    "transaction_amount": 57.75,
+    "timestamp": "2025-11-02 14:38:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Los Angeles",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1468,
+        "current_country": "United States",
+        "current_city": "Los Angeles"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20479454664",
+    "transaction_amount": 33.28,
+    "timestamp": "2025-11-02 03:30:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 217,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6600828651",
+    "transaction_amount": 119.98,
+    "timestamp": "2025-11-02 18:51:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 561,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6729817033",
+    "transaction_amount": 794.43,
+    "timestamp": "2025-11-02 02:59:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Valencia",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 78,
+        "current_country": "Spain",
+        "current_city": "Valencia"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90100802177",
+    "transaction_amount": 65.44,
+    "timestamp": "2025-11-02 17:46:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Yokohama",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1105,
+        "current_country": "Japan",
+        "current_city": "Yokohama"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555447816048",
+    "transaction_amount": 175.42,
+    "timestamp": "2025-11-03 00:26:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United States",
+      "city": "New York",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1924,
+        "current_country": "United States",
+        "current_city": "New York"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555143862821",
+    "transaction_amount": 306.68,
+    "timestamp": "2025-11-02 19:58:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1269,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20434611909",
+    "transaction_amount": 956.44,
+    "timestamp": "2025-11-02 21:17:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Birmingham",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1335,
+        "current_country": "United Kingdom",
+        "current_city": "Birmingham"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416453197212",
+    "transaction_amount": 58.45,
+    "timestamp": "2025-11-02 01:49:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 204,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6364814101",
+    "transaction_amount": 107.46,
+    "timestamp": "2025-11-02 05:19:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "France",
+      "city": "Nice",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 578,
+        "current_country": "France",
+        "current_city": "Nice"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6806506512",
+    "transaction_amount": 881.73,
+    "timestamp": "2025-11-02 05:16:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 881,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555582946268",
+    "transaction_amount": 39.46,
+    "timestamp": "2025-11-02 14:12:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Los Angeles",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1043,
+        "current_country": "United States",
+        "current_city": "Los Angeles"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6886372725",
+    "transaction_amount": 58.8,
+    "timestamp": "2025-11-02 22:00:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Valencia",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 992,
+        "current_country": "Spain",
+        "current_city": "Valencia"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20472467599",
+    "transaction_amount": 341.34,
+    "timestamp": "2025-11-02 06:43:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1952,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90430802996",
+    "transaction_amount": 118.06,
+    "timestamp": "2025-11-02 14:11:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Yokohama",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 6,
+        "current_country": "Japan",
+        "current_city": "Yokohama"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91898256357",
+    "transaction_amount": 120.5,
+    "timestamp": "2025-11-02 16:53:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1465,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91116084577",
+    "transaction_amount": 99.45,
+    "timestamp": "2025-11-02 08:14:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1266,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98711393728",
+    "transaction_amount": 132.9,
+    "timestamp": "2025-11-02 21:43:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "India",
+      "city": "Mumbai",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1551,
+        "current_country": "India",
+        "current_city": "Mumbai"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6509374908",
+    "transaction_amount": 236.36,
+    "timestamp": "2025-11-02 04:04:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "France",
+      "city": "Paris",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 606,
+        "current_country": "France",
+        "current_city": "Paris"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416253309548",
+    "transaction_amount": 197.08,
+    "timestamp": "2025-11-02 10:17:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Calgary",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 734,
+        "current_country": "Canada",
+        "current_city": "Calgary"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6650495977",
+    "transaction_amount": 128.4,
+    "timestamp": "2025-11-02 13:57:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1534,
+        "current_country": "Spain",
+        "current_city": "Barcelona"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30875306955",
+    "transaction_amount": 706.99,
+    "timestamp": "2025-11-02 05:49:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Hamburg",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 183,
+        "current_country": "Germany",
+        "current_city": "Hamburg"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6377624560",
+    "transaction_amount": 32.85,
+    "timestamp": "2025-11-02 18:16:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "France",
+      "city": "Nice",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 407,
+        "current_country": "France",
+        "current_city": "Nice"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20317387176",
+    "transaction_amount": 441.2,
+    "timestamp": "2025-11-02 05:48:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "London",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 396,
+        "current_country": "United Kingdom",
+        "current_city": "London"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6625013073",
+    "transaction_amount": 77.44,
+    "timestamp": "2025-11-02 21:18:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Seville",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1458,
+        "current_country": "Spain",
+        "current_city": "Seville"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98740914286",
+    "transaction_amount": 52.4,
+    "timestamp": "2025-11-02 13:42:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "India",
+      "city": "Mumbai",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 805,
+        "current_country": "India",
+        "current_city": "Mumbai"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98327552245",
+    "transaction_amount": 318.6,
+    "timestamp": "2025-11-02 03:26:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "India",
+      "city": "Mumbai",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1454,
+        "current_country": "India",
+        "current_city": "Mumbai"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20636276548",
+    "transaction_amount": 139.51,
+    "timestamp": "2025-11-02 03:18:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1627,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6509732202",
+    "transaction_amount": 196.18,
+    "timestamp": "2025-11-02 04:25:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "France",
+      "city": "Nice",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1999,
+        "current_country": "France",
+        "current_city": "Nice"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91349295221",
+    "transaction_amount": 107.26,
+    "timestamp": "2025-11-02 19:14:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 75,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98455569084",
+    "transaction_amount": 197.45,
+    "timestamp": "2025-11-02 20:18:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "India",
+      "city": "Mumbai",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 506,
+        "current_country": "India",
+        "current_city": "Mumbai"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30856401553",
+    "transaction_amount": 142.55,
+    "timestamp": "2025-11-03 00:03:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1921,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416347281944",
+    "transaction_amount": 187.68,
+    "timestamp": "2025-11-02 06:16:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Calgary",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1938,
+        "current_country": "Canada",
+        "current_city": "Calgary"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91338544733",
+    "transaction_amount": 716.36,
+    "timestamp": "2025-11-02 12:32:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1704,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90864995704",
+    "transaction_amount": 645.09,
+    "timestamp": "2025-11-02 02:40:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Osaka",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1877,
+        "current_country": "Japan",
+        "current_city": "Osaka"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20628864076",
+    "transaction_amount": 105.93,
+    "timestamp": "2025-11-02 23:01:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 975,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98709974283",
+    "transaction_amount": 180.15,
+    "timestamp": "2025-11-03 00:52:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "India",
+      "city": "Delhi",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 366,
+        "current_country": "India",
+        "current_city": "Delhi"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4165259272",
+    "transaction_amount": 309.45,
+    "timestamp": "2025-11-02 03:34:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Perth",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 331,
+        "current_country": "Australia",
+        "current_city": "Perth"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30841315905",
+    "transaction_amount": 204.82,
+    "timestamp": "2025-11-02 04:11:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 36,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555833135375",
+    "transaction_amount": 170.49,
+    "timestamp": "2025-11-02 02:52:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Miami",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1399,
+        "current_country": "United States",
+        "current_city": "Miami"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4501902097",
+    "transaction_amount": 176.11,
+    "timestamp": "2025-11-02 08:46:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Melbourne",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1589,
+        "current_country": "Australia",
+        "current_city": "Melbourne"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416917835457",
+    "transaction_amount": 99.98,
+    "timestamp": "2025-11-02 10:56:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Montreal",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 88,
+        "current_country": "Canada",
+        "current_city": "Montreal"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91622327480",
+    "transaction_amount": 172.23,
+    "timestamp": "2025-11-02 05:24:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1510,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555747961576",
+    "transaction_amount": 470.02,
+    "timestamp": "2025-11-02 11:33:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Miami",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1073,
+        "current_country": "United States",
+        "current_city": "Miami"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91329145710",
+    "transaction_amount": 124.95,
+    "timestamp": "2025-11-02 16:41:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 225,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555250285342",
+    "transaction_amount": 212.25,
+    "timestamp": "2025-11-02 07:36:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 343,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91178041887",
+    "transaction_amount": 34.17,
+    "timestamp": "2025-11-02 20:45:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1836,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91298108561",
+    "transaction_amount": 466.68,
+    "timestamp": "2025-11-02 05:47:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1310,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416348521081",
+    "transaction_amount": 113.32,
+    "timestamp": "2025-11-02 06:54:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Calgary",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 132,
+        "current_country": "Canada",
+        "current_city": "Calgary"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4520741979",
+    "transaction_amount": 39.22,
+    "timestamp": "2025-11-02 11:34:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Brisbane",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 433,
+        "current_country": "Australia",
+        "current_city": "Brisbane"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91147932844",
+    "transaction_amount": 419.45,
+    "timestamp": "2025-11-02 10:53:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 131,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91916782619",
+    "transaction_amount": 87.7,
+    "timestamp": "2025-11-02 09:31:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1494,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20411382792",
+    "transaction_amount": 134.4,
+    "timestamp": "2025-11-02 18:47:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 280,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6263884099",
+    "transaction_amount": 381.07,
+    "timestamp": "2025-11-02 11:27:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 107,
+        "current_country": "Spain",
+        "current_city": "Barcelona"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416450665131",
+    "transaction_amount": 158.01,
+    "timestamp": "2025-11-02 02:37:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1467,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4154464603",
+    "transaction_amount": 482.02,
+    "timestamp": "2025-11-02 13:31:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Sydney",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1334,
+        "current_country": "Australia",
+        "current_city": "Sydney"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91820259817",
+    "transaction_amount": 279.83,
+    "timestamp": "2025-11-02 18:55:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 917,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416551787697",
+    "transaction_amount": 71.47,
+    "timestamp": "2025-11-02 09:31:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Calgary",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1738,
+        "current_country": "Canada",
+        "current_city": "Calgary"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98502532264",
+    "transaction_amount": 188.01,
+    "timestamp": "2025-11-02 16:24:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "India",
+      "city": "Bangalore",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1903,
+        "current_country": "India",
+        "current_city": "Bangalore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4237275193",
+    "transaction_amount": 102.48,
+    "timestamp": "2025-11-02 04:56:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Melbourne",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 805,
+        "current_country": "Australia",
+        "current_city": "Melbourne"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30723416818",
+    "transaction_amount": 171.21,
+    "timestamp": "2025-11-02 22:14:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 301,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6693863564",
+    "transaction_amount": 388.89,
+    "timestamp": "2025-11-02 19:28:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1681,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30118355006",
+    "transaction_amount": 161.56,
+    "timestamp": "2025-11-02 19:20:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Hamburg",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 987,
+        "current_country": "Germany",
+        "current_city": "Hamburg"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30703883393",
+    "transaction_amount": 153.57,
+    "timestamp": "2025-11-02 11:46:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1573,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6717245530",
+    "transaction_amount": 56.07,
+    "timestamp": "2025-11-02 16:32:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "France",
+      "city": "Nice",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 521,
+        "current_country": "France",
+        "current_city": "Nice"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416755501734",
+    "transaction_amount": 727.03,
+    "timestamp": "2025-11-02 03:51:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Montreal",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 645,
+        "current_country": "Canada",
+        "current_city": "Montreal"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6105372565",
+    "transaction_amount": 181.56,
+    "timestamp": "2025-11-02 08:24:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "France",
+      "city": "Paris",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 757,
+        "current_country": "France",
+        "current_city": "Paris"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98768132506",
+    "transaction_amount": 107.55,
+    "timestamp": "2025-11-02 03:41:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "India",
+      "city": "Bangalore",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1128,
+        "current_country": "India",
+        "current_city": "Bangalore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30246216111",
+    "transaction_amount": 284.43,
+    "timestamp": "2025-11-03 00:09:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Hamburg",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 530,
+        "current_country": "Germany",
+        "current_city": "Hamburg"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4308433089",
+    "transaction_amount": 78.94,
+    "timestamp": "2025-11-02 16:57:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Sydney",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1791,
+        "current_country": "Australia",
+        "current_city": "Sydney"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416309048029",
+    "transaction_amount": 195.36,
+    "timestamp": "2025-11-02 22:19:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Montreal",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 408,
+        "current_country": "Canada",
+        "current_city": "Montreal"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90381403497",
+    "transaction_amount": 20.68,
+    "timestamp": "2025-11-02 18:51:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Kyoto",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 674,
+        "current_country": "Japan",
+        "current_city": "Kyoto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6656245751",
+    "transaction_amount": 64.01,
+    "timestamp": "2025-11-02 14:32:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "France",
+      "city": "Lyon",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1695,
+        "current_country": "France",
+        "current_city": "Lyon"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6770074185",
+    "transaction_amount": 505.3,
+    "timestamp": "2025-11-02 10:24:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 258,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555783946449",
+    "transaction_amount": 124.68,
+    "timestamp": "2025-11-02 22:03:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 569,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555967889305",
+    "transaction_amount": 174.44,
+    "timestamp": "2025-11-02 18:22:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1367,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6642695460",
+    "transaction_amount": 144.02,
+    "timestamp": "2025-11-02 05:55:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "France",
+      "city": "Lyon",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 809,
+        "current_country": "France",
+        "current_city": "Lyon"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98136261538",
+    "transaction_amount": 585.9,
+    "timestamp": "2025-11-02 14:19:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "India",
+      "city": "Kolkata",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1112,
+        "current_country": "India",
+        "current_city": "Kolkata"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6340964662",
+    "transaction_amount": 171.87,
+    "timestamp": "2025-11-02 11:18:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1736,
+        "current_country": "Spain",
+        "current_city": "Barcelona"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4756198645",
+    "transaction_amount": 176.41,
+    "timestamp": "2025-11-02 09:24:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Perth",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 222,
+        "current_country": "Australia",
+        "current_city": "Perth"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91809137979",
+    "transaction_amount": 238.48,
+    "timestamp": "2025-11-03 00:35:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 905,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555524162613",
+    "transaction_amount": 107.09,
+    "timestamp": "2025-11-02 09:18:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Miami",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1256,
+        "current_country": "United States",
+        "current_city": "Miami"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6158972148",
+    "transaction_amount": 268.62,
+    "timestamp": "2025-11-02 05:09:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Seville",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1478,
+        "current_country": "Spain",
+        "current_city": "Seville"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30233806621",
+    "transaction_amount": 116.5,
+    "timestamp": "2025-11-02 15:07:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Berlin",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 394,
+        "current_country": "Germany",
+        "current_city": "Berlin"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6489512507",
+    "transaction_amount": 88.41,
+    "timestamp": "2025-11-02 09:38:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1740,
+        "current_country": "Spain",
+        "current_city": "Barcelona"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6268606271",
+    "transaction_amount": 67.54,
+    "timestamp": "2025-11-02 17:57:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 894,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30714911295",
+    "transaction_amount": 60.64,
+    "timestamp": "2025-11-02 12:01:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Berlin",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 766,
+        "current_country": "Germany",
+        "current_city": "Berlin"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98771989415",
+    "transaction_amount": 59.95,
+    "timestamp": "2025-11-02 13:53:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "India",
+      "city": "Bangalore",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 105,
+        "current_country": "India",
+        "current_city": "Bangalore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91321486803",
+    "transaction_amount": 253.63,
+    "timestamp": "2025-11-02 21:11:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1870,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4383835580",
+    "transaction_amount": 135.45,
+    "timestamp": "2025-11-02 03:10:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Melbourne",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 699,
+        "current_country": "Australia",
+        "current_city": "Melbourne"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555869959765",
+    "transaction_amount": 47.88,
+    "timestamp": "2025-11-03 00:21:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United States",
+      "city": "New York",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1322,
+        "current_country": "United States",
+        "current_city": "New York"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30461532944",
+    "transaction_amount": 78.79,
+    "timestamp": "2025-11-02 15:05:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 670,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4320432257",
+    "transaction_amount": 570.87,
+    "timestamp": "2025-11-02 03:20:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Perth",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 934,
+        "current_country": "Australia",
+        "current_city": "Perth"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30320644033",
+    "transaction_amount": 334.41,
+    "timestamp": "2025-11-02 18:48:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Frankfurt",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1577,
+        "current_country": "Germany",
+        "current_city": "Frankfurt"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416892618184",
+    "transaction_amount": 168.59,
+    "timestamp": "2025-11-02 03:14:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Calgary",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 488,
+        "current_country": "Canada",
+        "current_city": "Calgary"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90243298703",
+    "transaction_amount": 256.2,
+    "timestamp": "2025-11-02 13:14:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Kyoto",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 348,
+        "current_country": "Japan",
+        "current_city": "Kyoto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555790439918",
+    "transaction_amount": 93.47,
+    "timestamp": "2025-11-02 19:21:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Chicago",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1028,
+        "current_country": "United States",
+        "current_city": "Chicago"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555779355798",
+    "transaction_amount": 258.67,
+    "timestamp": "2025-11-02 05:39:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Los Angeles",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1132,
+        "current_country": "United States",
+        "current_city": "Los Angeles"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555755915445",
+    "transaction_amount": 63.98,
+    "timestamp": "2025-11-02 15:23:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Los Angeles",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 455,
+        "current_country": "United States",
+        "current_city": "Los Angeles"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416310467965",
+    "transaction_amount": 82.77,
+    "timestamp": "2025-11-02 05:42:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 828,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555346682042",
+    "transaction_amount": 147.26,
+    "timestamp": "2025-11-02 06:19:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Chicago",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1120,
+        "current_country": "United States",
+        "current_city": "Chicago"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30113907162",
+    "transaction_amount": 518.09,
+    "timestamp": "2025-11-02 22:26:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Hamburg",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 142,
+        "current_country": "Germany",
+        "current_city": "Hamburg"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6315123160",
+    "transaction_amount": 49.64,
+    "timestamp": "2025-11-02 18:19:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "2-5 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1758,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91162215153",
+    "transaction_amount": 386.54,
+    "timestamp": "2025-11-02 08:01:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1545,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91314962532",
+    "transaction_amount": 97.32,
+    "timestamp": "2025-11-02 01:17:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 682,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4691956449",
+    "transaction_amount": 184.22,
+    "timestamp": "2025-11-02 12:51:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Melbourne",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 164,
+        "current_country": "Australia",
+        "current_city": "Melbourne"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91922717360",
+    "transaction_amount": 949.51,
+    "timestamp": "2025-11-02 13:47:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 807,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20628783624",
+    "transaction_amount": 42.98,
+    "timestamp": "2025-11-02 06:44:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Manchester",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1590,
+        "current_country": "United Kingdom",
+        "current_city": "Manchester"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416468961161",
+    "transaction_amount": 273.05,
+    "timestamp": "2025-11-02 15:53:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1325,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6743217076",
+    "transaction_amount": 319.74,
+    "timestamp": "2025-11-02 12:17:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "France",
+      "city": "Marseille",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1611,
+        "current_country": "France",
+        "current_city": "Marseille"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91926692789",
+    "transaction_amount": 40.93,
+    "timestamp": "2025-11-02 10:24:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 587,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4878146143",
+    "transaction_amount": 53.13,
+    "timestamp": "2025-11-02 20:53:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Brisbane",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1549,
+        "current_country": "Australia",
+        "current_city": "Brisbane"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555744109754",
+    "transaction_amount": 781.39,
+    "timestamp": "2025-11-02 16:42:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Chicago",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1196,
+        "current_country": "United States",
+        "current_city": "Chicago"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4589949387",
+    "transaction_amount": 79.9,
+    "timestamp": "2025-11-02 07:32:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Sydney",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1846,
+        "current_country": "Australia",
+        "current_city": "Sydney"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91430735949",
+    "transaction_amount": 753.76,
+    "timestamp": "2025-11-02 11:55:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 793,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30384465570",
+    "transaction_amount": 139.66,
+    "timestamp": "2025-11-02 15:34:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Frankfurt",
+      "segment": "Premium",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1963,
+        "current_country": "Germany",
+        "current_city": "Frankfurt"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20863604979",
+    "transaction_amount": 66.5,
+    "timestamp": "2025-11-02 19:48:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 836,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555896422102",
+    "transaction_amount": 429.7,
+    "timestamp": "2025-11-02 08:02:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Miami",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 287,
+        "current_country": "United States",
+        "current_city": "Miami"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6202622540",
+    "transaction_amount": 264.67,
+    "timestamp": "2025-11-02 21:58:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Seville",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 512,
+        "current_country": "Spain",
+        "current_city": "Seville"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6651499537",
+    "transaction_amount": 80.15,
+    "timestamp": "2025-11-02 06:15:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 776,
+        "current_country": "Spain",
+        "current_city": "Barcelona"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90938872924",
+    "transaction_amount": 193.47,
+    "timestamp": "2025-11-03 00:48:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Tokyo",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1411,
+        "current_country": "Japan",
+        "current_city": "Tokyo"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416761649690",
+    "transaction_amount": 89.45,
+    "timestamp": "2025-11-02 13:24:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Toronto",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1183,
+        "current_country": "Canada",
+        "current_city": "Toronto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4176544452",
+    "transaction_amount": 175.5,
+    "timestamp": "2025-11-02 22:40:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Melbourne",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 118,
+        "current_country": "Australia",
+        "current_city": "Melbourne"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30347654726",
+    "transaction_amount": 191.0,
+    "timestamp": "2025-11-02 03:43:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Frankfurt",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1578,
+        "current_country": "Germany",
+        "current_city": "Frankfurt"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-555952577347",
+    "transaction_amount": 134.66,
+    "timestamp": "2025-11-02 17:55:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United States",
+      "city": "Houston",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1586,
+        "current_country": "United States",
+        "current_city": "Houston"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+1-416837691555",
+    "transaction_amount": 210.62,
+    "timestamp": "2025-11-02 20:40:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Canada",
+      "city": "Montreal",
+      "segment": "Premium",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 366,
+        "current_country": "Canada",
+        "current_city": "Montreal"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20233001847",
+    "transaction_amount": 141.91,
+    "timestamp": "2025-11-02 13:06:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 383,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30531774937",
+    "transaction_amount": 36.34,
+    "timestamp": "2025-11-02 02:26:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Munich",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 691,
+        "current_country": "Germany",
+        "current_city": "Munich"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+61-4865837702",
+    "transaction_amount": 108.25,
+    "timestamp": "2025-11-02 18:57:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Australia",
+      "city": "Perth",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1087,
+        "current_country": "Australia",
+        "current_city": "Perth"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90665339277",
+    "transaction_amount": 63.77,
+    "timestamp": "2025-11-02 14:23:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Osaka",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "10+ years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1969,
+        "current_country": "Japan",
+        "current_city": "Osaka"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90968735588",
+    "transaction_amount": 163.81,
+    "timestamp": "2025-11-02 23:23:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Kyoto",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 753,
+        "current_country": "Japan",
+        "current_city": "Kyoto"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6520059493",
+    "transaction_amount": 79.94,
+    "timestamp": "2025-11-02 03:10:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Madrid",
+      "segment": "Standard",
+      "occupation": "Salaried",
+      "vintage": "2-5 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1778,
+        "current_country": "Spain",
+        "current_city": "Madrid"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+49-30350103051",
+    "transaction_amount": 644.73,
+    "timestamp": "2025-11-02 04:59:52",
+    "scenario": "retail_purchase",
+    "scenario_description": "Retail store purchase",
+    "customer_profile": {
+      "country": "Germany",
+      "city": "Frankfurt",
+      "segment": "Business",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1456,
+        "current_country": "Germany",
+        "current_city": "Frankfurt"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+34-6903204070",
+    "transaction_amount": 184.54,
+    "timestamp": "2025-11-03 00:00:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Spain",
+      "city": "Seville",
+      "segment": "Business",
+      "occupation": "Salaried",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1105,
+        "current_country": "Spain",
+        "current_city": "Seville"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91119708208",
+    "transaction_amount": 292.58,
+    "timestamp": "2025-11-02 07:04:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Premium",
+      "occupation": "Salaried",
+      "vintage": "10+ years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1208,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "4G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+65-91974092438",
+    "transaction_amount": 206.88,
+    "timestamp": "2025-11-02 05:10:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "segment": "Business",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 3,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 572,
+        "current_country": "Singapore",
+        "current_city": "Singapore"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+81-90554359049",
+    "transaction_amount": 80.87,
+    "timestamp": "2025-11-02 11:26:52",
+    "scenario": "utility_bills",
+    "scenario_description": "Utility bills and subscriptions",
+    "customer_profile": {
+      "country": "Japan",
+      "city": "Yokohama",
+      "segment": "Standard",
+      "occupation": "Self-Employed",
+      "vintage": "10+ years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 633,
+        "current_country": "Japan",
+        "current_city": "Yokohama"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+91-98120443067",
+    "transaction_amount": 144.67,
+    "timestamp": "2025-11-02 06:39:52",
+    "scenario": "restaurant_dining",
+    "scenario_description": "Restaurant and dining",
+    "customer_profile": {
+      "country": "India",
+      "city": "Kolkata",
+      "segment": "Premium",
+      "occupation": "Business",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1423,
+        "current_country": "India",
+        "current_city": "Kolkata"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+33-6198647218",
+    "transaction_amount": 112.1,
+    "timestamp": "2025-11-02 03:34:52",
+    "scenario": "grocery_shopping",
+    "scenario_description": "Grocery and daily essentials",
+    "customer_profile": {
+      "country": "France",
+      "city": "Paris",
+      "segment": "Business",
+      "occupation": "Professional",
+      "vintage": "2-5 years",
+      "risk_rating": 1,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 30,
+        "current_country": "France",
+        "current_city": "Paris"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Excellent",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  },
+  {
+    "phone_number": "+44-20624981739",
+    "transaction_amount": 445.17,
+    "timestamp": "2025-11-02 03:00:52",
+    "scenario": "online_shopping",
+    "scenario_description": "Online shopping",
+    "customer_profile": {
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "segment": "Standard",
+      "occupation": "Professional",
+      "vintage": "5-10 years",
+      "risk_rating": 2,
+      "pep_flag": false
+    },
+    "expected_camara_response": {
+      "sim_swap": {
+        "swapped": false,
+        "last_swap_date": "No recent swap",
+        "risk_score": 0.0
+      },
+      "location": {
+        "verified": true,
+        "distance_meters": 1179,
+        "current_country": "United Kingdom",
+        "current_city": "Edinburgh"
+      },
+      "roaming": {
+        "roaming": false,
+        "home_network": "Local Network",
+        "current_network": "Local Network"
+      },
+      "device_status": {
+        "connection_status": "DATA",
+        "network_type": "5G",
+        "signal_strength": "Good",
+        "last_seen": "Currently Active"
+      }
+    },
+    "expected_risk": "Low Risk",
+    "expected_flags": []
+  }
+]

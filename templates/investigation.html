@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Investigation: {{ phone_number }} - FraudHive</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/icons/favicon_icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <style>
+        .back-button {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            z-index: 999;
+            padding: 0.75rem 1.5rem;
+            background: rgba(74, 158, 255, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: rgba(43, 125, 224, 0.95);
+            transform: translateX(-5px);
+            box-shadow: 0 6px 16px rgba(74, 158, 255, 0.5);
+        }
+
+        /* LLM Explanation Section */
+        .llm-investigation-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #8b5cf6;
+        }
+
+        .llm-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .llm-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #8b5cf6;
+            margin: 0;
+        }
+
+        .llm-badge {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .generate-explanation-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .generate-explanation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .generate-explanation-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .llm-loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .llm-loading .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(139, 92, 246, 0.2);
+            border-radius: 50%;
+            border-top-color: #8b5cf6;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        .llm-content-box {
+            background: var(--bg-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .llm-content-box h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .llm-content-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .risk-factors-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .risk-factor-card {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .risk-factor-card.severity-CRITICAL {
+            border-color: #dc2626;
+            background: rgba(220, 38, 38, 0.05);
+        }
+
+        .risk-factor-card.severity-HIGH {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .risk-factor-card.severity-MEDIUM {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .risk-factor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .risk-factor-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .severity-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .severity-badge.CRITICAL {
+            background: #dc2626;
+            color: white;
+        }
+
+        .severity-badge.HIGH {
+            background: #ef4444;
+            color: white;
+        }
+
+        .severity-badge.MEDIUM {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .recommendation-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .recommendation-box.reject {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+        }
+
+        .recommendation-box.step-up {
+            background: rgba(245, 158, 11, 0.1);
+            border: 2px solid #f59e0b;
+        }
+
+        .recommendation-box.approve {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+        }
+
+        .recommendation-action {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .next-steps-list {
+            margin-top: 1rem;
+        }
+
+        .next-steps-list ol {
+            padding-left: 1.5rem;
+        }
+
+        .next-steps-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">
+        <i class="bi bi-arrow-left"></i> Back
+    </button>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">
+                    <img src="{{ url_for('static', filename='assets/icons/monitoring-health-svgrepo-com.svg') }}" alt="FraudGuard" class="icon-primary">
+                </span>
+                <span class="logo-text">FraudHive</span>
+                <span class="logo-subtext">Powered by Nokia NaC</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="bi bi-shield-check"></i> Analyze Transaction
+                </a>
+                <a href="/logs" class="nav-link">
+                    <i class="bi bi-list-ul"></i> Transaction History
+                </a>
+                <a href="/dashboard" class="nav-link">
+                    <i class="bi bi-graph-up"></i> Dashboard
+                </a>
+                <a href="/analytics" class="nav-link">
+                    <i class="bi bi-graph-up-arrow"></i> Analytics
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="investigation-page">
+        <div class="page-header">
+            <div>
+                <h1><i class="bi bi-search"></i> Investigation Report</h1>
+                <p class="investigation-phone"><code>{{ phone_number }}</code></p>
+            </div>
+            <button class="export-btn" onclick="window.location.href='/export-investigation/{{ phone_number }}'">
+                <i class="bi bi-file-pdf"></i> Export PDF Report
+            </button>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="investigation-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-activity"></i></div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ stats.total_txns }}</div>
+                    <div class="stat-label">Total Transactions</div>
+                </div>
+            </div>
+            
+            <div class="stat-card stat-danger">
+                <div class="stat-icon"><i class="bi bi-exclamation-triangle"></i></div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ stats.high_risk_txns }}</div>
+                    <div class="stat-label">High Risk Alerts</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-currency-dollar"></i></div>
+                <div class="stat-content">
+                    <div class="stat-value">${{ "%.2f"|format(stats.total_amount) }}</div>
+                    <div class="stat-label">Total Amount</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-percent"></i></div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ "%.1f"|format(stats.avg_risk_score * 100) }}%</div>
+                    <div class="stat-label">Avg Risk Score</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: LLM-Powered Investigation Analysis -->
+        <div class="llm-investigation-section" id="llmSection">
+            <div class="llm-header">
+                <h3>
+                    <i class="bi bi-brain"></i>
+                    AI-Powered Investigation Analysis
+                </h3>
+                <button class="generate-explanation-btn" id="generateBtn" onclick="generateInvestigationAnalysis()">
+                    <i class="bi bi-stars"></i>
+                    Generate AI Analysis
+                </button>
+            </div>
+
+            <div id="llmContent">
+                <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                    <i class="bi bi-lightbulb" style="font-size: 3rem; opacity: 0.5;"></i>
+                    <p style="margin-top: 1rem;">Click "Generate AI Analysis" to get comprehensive fraud insights powered by Google Gemini</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline View -->
+        <div class="timeline-section">
+            <h3><i class="bi bi-clock-history"></i> Transaction Timeline</h3>
+            
+            {% if logs %}
+            <div class="timeline-container">
+                {% for log in logs %}
+                <div class="timeline-item" data-risk="{{ log.risk_level }}">
+                    <div class="timeline-marker {% if log.risk_level == 'High Risk' %}marker-danger{% elif log.risk_level == 'Medium Risk' %}marker-warning{% else %}marker-success{% endif %}"></div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-time">
+                                <i class="bi bi-clock"></i> {{ log.timestamp }}
+                            </div>
+                            <span class="risk-badge {{ log.risk_level|lower|replace(' ', '-') }}">
+                                {{ log.risk_level }}
+                            </span>
+                        </div>
+                        
+                        <div class="timeline-body">
+                            <div class="timeline-row">
+                                <div class="timeline-col">
+                                    <strong>Amount:</strong> ${{ "%.2f"|format(log.transaction_amount) }}
+                                </div>
+                                <div class="timeline-col">
+                                    <strong>Risk Score:</strong> {{ "%.1f"|format(log.fraud_probability * 100) }}%
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-row">
+                                <div class="timeline-col">
+                                    <strong>Network Checks:</strong>
+                                    <div class="network-indicators">
+                                        {% if log.camara_data.sim_swap.swapped %}
+                                        <span class="indicator-alert" title="SIM Swap Detected">
+                                            <i class="bi bi-sim"></i> SIM SWAP
+                                        </span>
+                                        {% endif %}
+                                        {% if not log.camara_data.location.verified %}
+                                        <span class="indicator-alert" title="Location Mismatch">
+                                            <i class="bi bi-geo-alt"></i> LOCATION
+                                        </span>
+                                        {% endif %}
+                                        {% if log.camara_data.sim_swap.swapped == false and log.camara_data.location.verified %}
+                                        <span class="indicator-safe">
+                                            <i class="bi bi-check-circle"></i> ALL OK
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {% if log.explanation and log.explanation.triggered_rules %}
+                            <div class="timeline-rules">
+                                <strong>Triggered Rules:</strong>
+                                <ul>
+                                    {% for rule in log.explanation.triggered_rules %}
+                                    <li class="rule-severity-{{ rule.severity|lower }}">
+                                        {{ rule.rule }}: {{ rule.description }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            
+                            <div class="timeline-actions">
+                                <button class="btn-details" onclick='showTransactionDetails({{ log|tojson }})'>
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">🔍</div>
+                <h3>No Transactions Found</h3>
+                <p>No transaction history available for this phone number</p>
+                <a href="/" class="btn-primary"><i class="bi bi-arrow-left"></i> Back to Analysis</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Transaction Details Modal -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="bi bi-file-text"></i> Transaction Details</h2>
+                <button class="modal-close" onclick="closeTransactionModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="transactionModalBody">
+                <!-- Content populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const phoneNumber = '{{ phone_number }}';
+
+        async function generateInvestigationAnalysis() {
+            const btn = document.getElementById('generateBtn');
+            const content = document.getElementById('llmContent');
+            
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Generating...';
+            
+            content.innerHTML = `
+                <div class="llm-loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing transaction patterns with AI...</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">This may take 5-10 seconds</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(`/api/get-llm-explanation/${phoneNumber}`);
+                const data = await response.json();
+                
+                if (data.success && data.explanation) {
+                    displayLLMAnalysis(data.explanation);
+                    btn.innerHTML = '<i class="bi bi-arrow-clockwise"></i> Regenerate Analysis';
+                } else {
+                    throw new Error(data.error || 'Failed to generate analysis');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: var(--danger-color);">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                        <p style="margin-top: 1rem;">Failed to generate AI analysis</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">${error.message}</p>
+                    </div>
+                `;
+                btn.innerHTML = '<i class="bi bi-stars"></i> Try Again';
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        function displayLLMAnalysis(explanation) {
+            const content = document.getElementById('llmContent');
+            
+            let html = '';
+            
+            // Executive Summary
+            if (explanation.executive_summary) {
+                html += `
+                    <div class="llm-content-box">
+                        <h4><i class="bi bi-file-text"></i> Executive Summary</h4>
+                        <p>${explanation.executive_summary}</p>
+                    </div>
+                `;
+            }
+            
+            // Detailed Analysis
+            if (explanation.detailed_analysis) {
+                html += `
+                    <div class="llm-content-box">
+                        <h4><i class="bi bi-clipboard-data"></i> Detailed Analysis</h4>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            ${explanation.detailed_analysis.replace(/\n/g, '<br>')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Behavioral Insights
+            if (explanation.behavioral_insights) {
+                html += `
+                    <div class="llm-content-box">
+                        <h4><i class="bi bi-person-lines-fill"></i> Behavioral Insights</h4>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            ${explanation.behavioral_insights.replace(/\n/g, '<br>')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Risk Factors
+            if (explanation.risk_factors && explanation.risk_factors.length > 0) {
+                html += `
+                    <div class="llm-content-box">
+                        <h4><i class="bi bi-exclamation-triangle-fill"></i> Detected Risk Factors</h4>
+                        <div class="risk-factors-grid">
+                `;
+                
+                explanation.risk_factors.forEach(factor => {
+                    html += `
+                        <div class="risk-factor-card severity-${factor.severity}">
+                            <div class="risk-factor-header">
+                                <span class="risk-factor-title">${factor.factor}</span>
+                                <span class="severity-badge ${factor.severity}">${factor.severity}</span>
+                            </div>
+                            <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                                ${factor.explanation}
+                            </p>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Recommendation
+            if (explanation.recommendation) {
+                const rec = explanation.recommendation;
+                const actionClass = rec.action.includes('BLOCK') ? 'reject' :
+                                   rec.action.includes('VERIFICATION') ? 'step-up' : 'approve';
+                
+                html += `
+                    <div class="llm-content-box">
+                        <h4><i class="bi bi-lightbulb-fill"></i> Recommended Action</h4>
+                        <div class="recommendation-box ${actionClass}">
+                            <div class="recommendation-action">${rec.action}</div>
+                `;
+                
+                if (rec.urgency) {
+                    html += `
+                        <div style="padding: 0.5rem 1rem; background: #ef4444; color: white; 
+                                    border-radius: 6px; display: inline-block; font-weight: 600; font-size: 0.85rem;">
+                            ${rec.urgency}
+                        </div>
+                    `;
+                }
+                
+                if (rec.next_steps && rec.next_steps.length > 0) {
+                    html += `
+                        <div class="next-steps-list">
+                            <strong style="color: var(--text-primary);">Next Steps:</strong>
+                            <ol>
+                    `;
+                    rec.next_steps.forEach(step => {
+                        html += `<li>${step}</li>`;
+                    });
+                    html += `
+                            </ol>
+                        </div>
+                    `;
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Generation method badge
+            const method = explanation.generation_method || 'unknown';
+            const methodBadge = method === 'gemini' ? 
+                '<span class="llm-badge">Generated by Google Gemini AI</span>' :
+                '<span class="llm-badge" style="background: #6b7280;">Generated by Rule Engine</span>';
+            
+            html += `
+                <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                    ${methodBadge}
+                </div>
+            `;
+            
+            content.innerHTML = html;
+        }
+
+        function showTransactionDetails(log) {
+            const modalBody = document.getElementById('transactionModalBody');
+            
+            modalBody.innerHTML = `
+                <div class="modal-section">
+                    <h3><i class="bi bi-info-circle"></i> Transaction Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Timestamp:</span>
+                            <span class="info-value">${log.timestamp}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Amount:</span>
+                            <span class="info-value">$${parseFloat(log.transaction_amount).toFixed(2)}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Risk Score:</span>
+                            <span class="info-value">${(log.fraud_probability * 100).toFixed(1)}%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Risk Level:</span>
+                            <span class="info-value"><span class="risk-badge ${log.risk_level.toLowerCase().replace(' ', '-')}">${log.risk_level}</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3><i class="bi bi-broadcast"></i> Network Intelligence</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">SIM Swap:</span>
+                            <span class="info-value">${log.camara_data.sim_swap.swapped ? '<span class="badge-danger">⚠️ DETECTED</span>' : '<span class="badge-success">✅ Clear</span>'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">${log.camara_data.location.verified ? '<span class="badge-success">✅ Verified</span>' : '<span class="badge-danger">⚠️ Mismatch</span>'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Distance:</span>
+                            <span class="info-value">${(log.camara_data.location.distance_meters / 1000).toFixed(1)} km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                ${log.explanation && log.explanation.summary ? `
+                <div class="modal-section">
+                    <h3><i class="bi bi-chat-left-text"></i> Analysis Summary</h3>
+                    <div class="explanation-box">
+                        ${log.explanation.summary}
+                    </div>
+                </div>
+                ` : ''}
+            `;
+            
+            document.getElementById('transactionModal').style.display = 'flex';
+        }
+        
+        function closeTransactionModal() {
+            document.getElementById('transactionModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('transactionModal');
+            if (event.target === modal) {
+                closeTransactionModal();
+            }
+        }
+    </script>
+</body>
+</html>
